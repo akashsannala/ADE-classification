@@ -1,3 +1,28 @@
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report, accuracy_score
+from imblearn.over_sampling import SMOTE
+import time
+import torch
+import torch.nn.functional as F
+from tqdm import tqdm  # Import tqdm for the progress bar
+
+import re
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from torch.nn.functional import softmax
+from contractions import fix  # Expands contractions
+import nltk
+
+
+
+
+
+df = pd.read_parquet("hf://datasets/ade-benchmark-corpus/ade_corpus_v2/Ade_corpus_v2_classification/train-00000-of-00001.parquet")
+
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from imblearn.over_sampling import SMOTE
 import pandas as pd
